@@ -1,0 +1,545 @@
+/* Set margin to 0 and height to 100% for body element */
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+/* Set grid area, and enable vertical scrollbar for sidebar */
+#sidebar {
+    grid-area: sidebar;
+    overflow-y: scroll;
+}
+
+/* Set grid area for main content area */
+#content {
+    grid-area: content;
+}
+
+/* Set grid area for header element, and set font family */
+.header {
+    grid-area: header;
+    font-family: Helvetica, sans-serif;
+}
+
+/* Set grid area for footer element */
+.footer {
+    grid-area: footer;
+}
+
+/* Set styles for sidebar items */
+.sideBarItem {
+    max-height: 50px;
+    max-width: 50px;
+    padding: 5px;
+}
+
+/* Set max height and width for sidebar item images */
+.sideBarItem img {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+/* Set grid area for colour palette and set display properties */
+.colourPalette {
+    grid-area: colourP;
+    display: flex;
+    flex-direction: grid;
+    flex-flow: wrap;
+}
+
+/* Set grid area for options and add padding */
+.options {
+    grid-area: options;
+    padding: 15px;
+}
+
+/* Set styles for colour swatches */
+.colourSwatches {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    max-height: 40px;
+    max-width: 40px;
+    margin: 5px;
+}
+
+/* Set grid properties for wrapper element */
+.wrapper {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 70px 230px minmax(500px, 1fr);
+    grid-template-rows: 35px minmax(500px, 1fr) 160px;
+    grid-template-areas:
+        "header header header"
+        "sidebar content content"
+        "colourP colourP options";
+    background-color: #fff;
+    color: #444;
+}
+
+/* Set styles for box elements */
+.box {
+    background-color: #444;
+    color: #fff;
+    font-size: 150%;
+}
+
+/* Header styles */
+.header {
+    background-color: #444;
+}
+
+/* Shape selection dropdown styles */
+#shapeSelect {
+    background-color: #4CAF50;
+    margin-left: 450px;
+    position: absolute;
+    bottom: 80px;
+    color: black;
+}
+
+/* Label for shape selection dropdown styles */
+.label {
+    margin-left: 380px;
+    position: absolute;
+    bottom: 76px;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Stamp selection dropdown styles */
+#stampSelector {
+    background-color: #4CAF50;
+    margin-left: 10px;
+}
+
+/* Edit button styles */
+#editButton {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+/* Edit button hover styles */
+#editButton:hover {
+    background-color: #3e8e41;
+    /* Dark green */
+}
+
+/* Finish button styles */
+#finishButton {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 7px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    margin-left: 20px;
+}
+
+/* Finish button hover styles */
+#finishButton:hover {
+    background-color: #3e8e41;
+    /* Dark green */
+}
+
+/* Fill button styles */
+#fillButton {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 7px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    float: right;
+    /* Floats the button to the right */
+    margin-right: 800px;
+    /* Adds a small margin to the right to create space between the button and other elements */
+}
+
+/* Fill button hover styles */
+#fillButton:hover {
+    background-color: #3e8e41;
+    /* Dark green */
+}
+
+#strokeSlider {
+    -webkit-appearance: none;
+    /* Hides the default slider appearance in WebKit browsers */
+    width: 10%;
+    /* Makes the slider take up the full width of its container */
+    height: 8px;
+    /* Sets the height of the slider track */
+    background-color: #ddd;
+    /* Sets the color of the slider track */
+    border-radius: 5px;
+    /* Rounds the corners of the slider track */
+    outline: none;
+    /* Removes the default focus outline */
+    opacity: 0.7;
+    /* Sets the initial opacity of the slider thumb */
+    transition: opacity 0.2s;
+    /* Adds a transition effect when changing the opacity of the slider thumb */
+    float: left;
+    position: relative;
+    top: -50px;
+    margin-left: 130px;
+}
+
+#strokeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Hides the default thumb appearance in WebKit browsers */
+    appearance: none;
+    /* Hides the default thumb appearance in non-WebKit browsers */
+    width: 16px;
+    /* Sets the width of the slider thumb */
+    height: 16px;
+    /* Sets the height of the slider thumb */
+    background-color: #4CAF50;
+    /* Sets the color of the slider thumb */
+    border-radius: 50%;
+    /* Rounds the corners of the slider thumb */
+    cursor: pointer;
+    /* Changes the cursor to a pointer when hovering over the thumb */
+}
+
+#strokeSlider:hover::-webkit-slider-thumb {
+    opacity: 1;
+    /* Makes the slider thumb fully opaque when hovering over the slider */
+}
+
+/* Defines the style for the rectangular label */
+.rectlabel {
+    position: relative;
+    top: -30px;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+/* Defines the style for the circular label */
+.circlelabel {
+    position: relative;
+    top: -30px;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Defines the style for the direction button */
+#directionButton {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 7px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+/* Defines the style for the hover effect of the direction button */
+#directionButton:hover {
+    background-color: #3e8e41;
+    /* Dark green */
+}
+
+/* Defines the style for the clear button */
+#clearButton {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 4px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+/* Defines the style for the hover effect of the clear button */
+#clearButton:hover {
+    background-color: #3e8e41;
+    /* Dark green */
+}
+
+/* Defines the style for the save image button */
+#saveImageButton {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 4px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    margin-top: 2px;
+}
+
+/* Defines the style for the hover effect of the save image button */
+#saveImageButton:hover {
+    background-color: #3e8e41;
+    /* Dark green */
+}
+
+/* Defines the style for the line label */
+.linelabel {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Defines the style for the freehand label */
+.freehandlabel {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Defines the style for the spray label (type 1) */
+.spraylabel1 {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Defines the style for the spray label (type 2) */
+.spraylabel2 {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Styling for brush tool label */
+.brushlabel {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Styling for eraser tool label */
+.eraserlabel {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Styling for stamp tool label */
+.stamplabel {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+/* Styling for spirograph tool label */
+.spirolabel {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Styling for third spirograph tool label */
+.spirolabel3 {
+    position: absolute;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: -10px;
+    margin-left: -5px;
+}
+
+/* Styling for color picker label */
+.colorPickerLabel {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    color: #ddd;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+/* Styling for color picker */
+.colorPicker {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    margin: 5px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+}
+
+/* Styling for sliders */
+.Sliders {
+    -webkit-appearance: none;
+    /* Hides the default slider appearance in WebKit browsers */
+    width: 10%;
+    /* Makes the slider take up the full width of its container */
+    height: 8px;
+    /* Sets the height of the slider track */
+    background-color: #ddd;
+    /* Sets the color of the slider track */
+    border-radius: 5px;
+    /* Rounds the corners of the slider track */
+    outline: none;
+    /* Removes the default focus outline */
+    opacity: 0.7;
+    /* Sets the initial opacity of the slider thumb */
+    transition: opacity 0.2s;
+    /* Adds a transition effect when changing the opacity of the slider thumb */
+    margin-left: 10px;
+
+}
+
+/* Styling for sliders */
+.Sliders::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Hides the default thumb appearance in WebKit browsers */
+    appearance: none;
+    /* Hides the default thumb appearance in non-WebKit browsers */
+    width: 16px;
+    /* Sets the width of the slider thumb */
+    height: 16px;
+    /* Sets the height of the slider thumb */
+    background-color: #4CAF50;
+    /* Sets the color of the slider thumb */
+    border-radius: 50%;
+    /* Rounds the corners of the slider thumb */
+    cursor: pointer;
+    /* Changes the cursor to a pointer when hovering over the thumb */
+}
+
+.Sliders:hover::-webkit-slider-thumb {
+    opacity: 1;
+    /* Makes the slider thumb fully opaque when hovering over the slider */
+}
+
+/* Styling for sliders */
+.Sliders3 {
+    -webkit-appearance: none;
+    /* Hides the default slider appearance in WebKit browsers */
+    width: 10%;
+    /* Makes the slider take up the full width of its container */
+    height: 8px;
+    /* Sets the height of the slider track */
+    background-color: #ddd;
+    /* Sets the color of the slider track */
+    border-radius: 5px;
+    /* Rounds the corners of the slider track */
+    outline: none;
+    /* Removes the default focus outline */
+    opacity: 0.7;
+    /* Sets the initial opacity of the slider thumb */
+    transition: opacity 0.2s;
+    /* Adds a transition effect when changing the opacity of the slider thumb */
+    float: right;
+    margin-right: 950px;
+}
+
+/* Styling for sliders */
+.Sliders3::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Hides the default thumb appearance in WebKit browsers */
+    appearance: none;
+    /* Hides the default thumb appearance in non-WebKit browsers */
+    width: 16px;
+    /* Sets the width of the slider thumb */
+    height: 16px;
+    /* Sets the height of the slider thumb */
+    background-color: #4CAF50;
+    /* Sets the color of the slider thumb */
+    border-radius: 50%;
+    /* Rounds the corners of the slider thumb */
+    cursor: pointer;
+    /* Changes the cursor to a pointer when hovering over the thumb */
+
+}
+
+.Sliders3:hover::-webkit-slider-thumb {
+    opacity: 1;
+    /* Makes the slider thumb fully opaque when hovering over the slider */
+}
